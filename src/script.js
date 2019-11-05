@@ -63,7 +63,7 @@ const newQuoteActionCreator = chosenQuoteInput => {
   };
 };
 
-//creating a reducer that handles the state for quotes. The reducer ... or return the current state.
+//defining reducer functions to allow the Redux store to know how to respond to the action created
 const getNextQuoteReducer = (state = initialState, action) => {
   switch (action.type) {
     case REQUESTING_API_DATA:
@@ -101,16 +101,6 @@ const store = Redux.createStore(
   getNextQuoteReducer,
   /* preloadedState, */ composeEnhancers(Redux.applyMiddleware(ReduxThunk))
 );
-
-// const store = Redux.createStore(
-//   getNextQuoteReducer,
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// ); //second argument is to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history
-
-// const store = Redux.createStore(
-//   getNextQuoteReducer,
-//   Redux.applyMiddleware(ReduxThunk)
-// );
 
 // React:
 
@@ -159,6 +149,7 @@ const TwitterShare = ({ link }) => {
   );
 };
 
+//defining a component for the loading spinner
 const Loading = () => {
   return (
     <div className="loading-container">
@@ -204,6 +195,7 @@ const App = props => {
     return array[random(array)];
   };
 
+  //defining a function to (ultimately) update the Redux state with a new quote. Passing a randomly selected quote via props. Dispatching selectNewQuote() from props and passing in the randomly selected new quote as an argument
   const chosenRandomQuoteToState = () => {
     //selecting a random quote from the array
     let chosenQuote = randomQuoteFunction(props.stateQuotes);
@@ -279,7 +271,7 @@ const mapStateToProps = state => {
   };
 };
 
-//mapping dispatch to props. Specifying what actions should the React component have access to. Allows me to specify which action creators I need to be able to dispatch. It is used to provide specific action creators to the React components so they can dispatch actions against the Redux store. It returns an object that maps dispatch actions to property names, which become component props. As opposed to mapStateToProps (that returns a piece of state), here each property returns a function that calls dispatch with an action creator and any relevant action data. I have access to this dispatch because it's passed in to mapDispatchToProps()as a parameter when I define the function, just like I've passed state to mapStateToProps(). The object should have a property selectNewQuote set to the dispatch function, which takes a parameter for the new quote to add when it dispatches newQuoteActionCreator().
+//mapping dispatch to props. Specifying what actions should the React component have access to. Allows me to specify which action creators I need to be able to dispatch. It is used to provide specific action creators to the React components so they can dispatch actions against the Redux store. It returns an object that maps dispatch actions to property names, which become component props. As opposed to mapStateToProps (that returns a piece of state), here each property returns a function that calls dispatch with an action creator and any relevant action data. I have access to this dispatch because it's passed in to mapDispatchToProps() as a parameter when I define the function, just like I've passed state to mapStateToProps(). The object should have a property selectNewQuote set to the dispatch function, which takes a parameter for the new quote to add when it dispatches newQuoteActionCreator(). It should also have a property handleAsyncFX set to a dispatch function that dispatches handleAsync().
 const mapDispatchToProps = dispatch => {
   return {
     selectNewQuote: function(quoteToBeNewQuote) {
