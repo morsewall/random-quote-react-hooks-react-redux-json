@@ -97,7 +97,7 @@ const composeEnhancers =
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || Redux.compose;
 
 //creating the Redux store, including Redux Thunk middleware. This is where the state lives.
-export const store = Redux.createStore(
+const store = Redux.createStore(
   getNextQuoteReducer,
   /* preloadedState, */ composeEnhancers(Redux.applyMiddleware(ReduxThunk))
 );
