@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- htmlmin:ignore -->
+<!--
+__   __  ___     _______  __   __  _______  ______    _______  __
+|  | |  ||   |   |       ||  | |  ||       ||    _ |  |       ||  |
+|  |_|  ||   |   |_     _||  |_|  ||    ___||   | ||  |    ___||  |
+|       ||   |     |   |  |       ||   |___ |   |_||_ |   |___ |  |
+|       ||   |     |   |  |       ||    ___||    __  ||    ___||__|
+|   _   ||   |     |   |  |   _   ||   |___ |   |  | ||   |___  __
+|__| |__||___|     |___|  |__| |__||_______||___|  |_||_______||__|
+
+!-->
+<!--
+	Copyright (c) 2019 Pat Eskinasy
+	eskinasy.com | @celue
+-->
+<!-- htmlmin:ignore -->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Random quote machine</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="src/stylesheets/style.css" />
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+<body>
+	<!-- I’m adding an empty <div> tag to mark the spot where I want to display with React. -->
+	<div id="app">
+	</div> 
+	<!-- adding the React library from a precompiled UMD packages. React is the global variable to call React. -->
+	<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+	<!-- Loading the Babel compiler. When loaded in a browser, @babel/standalone will automatically compile and execute all script tags with type text/babel or text/jsx: -->
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	<!-- adding the Redux library from a precompiled UMD package. window.Redux is the global variable to call Redux. -->
+	<script src="https://unpkg.com/redux@4.0.4/dist/redux.js"></script>
+	<!-- adding the React Redux library from a precompiled UMD package. ReactRedux is the global variable to call React Redux. -->
+	<script src="https://unpkg.com/react-redux@7.1.1/dist/react-redux.min.js"></script>
+	<!-- adding the Redux Thunk library from a precompiled UMD package. window.ReduxThunk.default is the global variable to call Redux Thunk. -->
+	<script src="https://unpkg.com/redux-thunk@2.3.0/dist/redux-thunk.min.js"></script>
+	<!-- special text/babel MIME type -->
+	<script type="text/babel" src="src/script.js"></script>
+	<!-- The below JS is for the widget by makerwidget -->
+	<script src="src/vendor/makerwidget.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Special Elite", cursive;
+  font-weight: 400;
+  height: 100%;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  line-height: 1.5;
+  min-height: calc(100vh - 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://i.ibb.co/mGqnMN6/greta3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#quote-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.quotable-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 35vw;
+  height: 35vw;
+  margin: auto;
+  background-color: white;
+  opacity: 0.85;
+  border-radius: 18px;
+  padding: 3em;
+}
+
+.content {
+  font-size: 1.8vw;
+}
+
+.author {
+  font-size: 1.5vw;
+  text-align: right;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+button {
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.new-quote {
+  background-color: #262626;
+  border: none;
+  color: white;
+}
+
+.tweet-quote {
+  border: 2px solid #262626;
+  background-color: white;
+  color: #262626;
+}
+
+.fab {
+  margin: 0 8px 0 0;
+}
+
+footer {
+  font-size: small;
+  color: #fff;
+  background-color: #262626;
+  display: flex;
+  width: 100vw;
+  height: 3rem;
+}
+
+.footer-options {
+  width: 50vw;
+  display: flex;
+  justify-content: flex-start;
+  padding-inline-start: 20px;
+  align-items: center;
+}
+
+.footer-link {
+  padding: 0 20px;
+}
+
+.footer-linktext {
+  color: #fff;
+}
+
+footer span {
+  width: 50vw;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .quotable-square {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .content {
+    font-size: 4vw;
+  }
+
+  .author {
+    font-size: 3.2vw;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    height: 4rem;
+  }
+
+  .footer-options {
+    width: 100vw;
+    flex-direction: row;
+    justify-content: center;
+    padding-inline-start: 0;
+    align-items: center;
+  }
+
+  footer span {
+    width: 100vw;
+    flex-direction: column;
+    text-align: center;
+    align-self: flex-start;
+  }
+}
