@@ -92,14 +92,24 @@ const getNextQuoteReducer = (state = initialState, action) => {
 // The UMD build makes Redux-Thunk available as a window.ReduxThunk.default global variable
 const ReduxThunk = window.ReduxThunk.default;
 
-//to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history. When the extension is not installed, I'm using Redux’s compose.
-const composeEnhancers =
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || Redux.compose;
+// //to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history. When the extension is not installed, I'm using Redux’s compose.
+// const composeEnhancers =
+//   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || Redux.compose;
 
-//creating the Redux store, including Redux Thunk middleware. This is where the state lives.
+// //creating the Redux store, including Redux Thunk middleware. This is where the state lives.
+// const store = Redux.createStore(
+//   getNextQuoteReducer,
+//   /* preloadedState, */ composeEnhancers(Redux.applyMiddleware(ReduxThunk))
+// );
+
+// const store = Redux.createStore(
+//   getNextQuoteReducer,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// ); //second argument is to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history
+
 const store = Redux.createStore(
   getNextQuoteReducer,
-  /* preloadedState, */ composeEnhancers(Redux.applyMiddleware(ReduxThunk))
+  Redux.applyMiddleware(ReduxThunk)
 );
 
 // React:
