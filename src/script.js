@@ -171,7 +171,6 @@ const Loading = () => {
 const App = props => {
   React.useEffect(() => {
     props.handleAsyncFX();
-    console.log("hello");
   }, []);
 
   //making the machine tweet
