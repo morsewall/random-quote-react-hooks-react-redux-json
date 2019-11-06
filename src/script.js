@@ -34,10 +34,8 @@ const handleAsync = () => {
       );
       const responseObject = await responseJSON.json();
       const quotesArray = responseObject.quotes;
-      // console.log(quotes);
       // dispatch received data action here
       store.dispatch(receivedApiData(quotesArray));
-      // console.log(receivedApiData(quotes));
       let initialQuote =
         quotesArray[Math.floor(Math.random() * quotesArray.length)];
       store.dispatch(newQuoteActionCreator(initialQuote));
