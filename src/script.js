@@ -23,12 +23,6 @@ const receivedApiData = apiData => {
   };
 };
 
-// defining initial state
-const initialState = {
-  status: "",
-  quotesData: []
-};
-
 //defining an action type
 const NEW_QUOTE = "NEW_QUOTE";
 
@@ -59,6 +53,12 @@ const handleAsync = () => {
     };
     makeRequest();
   };
+};
+
+// defining initial state
+const initialState = {
+  status: "",
+  quotesData: []
 };
 
 //defining reducer functions to allow the Redux store to know how to respond to the action created
