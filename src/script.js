@@ -23,6 +23,23 @@ const receivedApiData = apiData => {
   };
 };
 
+// defining initial state
+const initialState = {
+  status: "",
+  quotesData: []
+};
+
+//defining an action type
+const NEW_QUOTE = "NEW_QUOTE";
+
+//defining an action creator, which creates the action to select a new quote.  The action creator is a function that returns an action (object that contains information about an action-event that has occurred). It creates the action to add a new quote.
+const newQuoteActionCreator = chosenQuoteInput => {
+  return {
+    type: NEW_QUOTE,
+    payloadQuote: chosenQuoteInput
+  };
+};
+
 // defining a special action creator that returns a function. The returned function takes dispatch as an argument. Within this function, I can dispatch actions and perform asynchronous requests. It's common to dispatch an action before initiating any asynchronous behavior so that the application state knows that some data is being requested (this state could display a loading icon, for instance). Then, once the application receives the data, another action is dispatched, an action that carries the data as a payload along with information that the action is completed.
 const handleAsync = () => {
   return function(dispatch) {
@@ -41,23 +58,6 @@ const handleAsync = () => {
       store.dispatch(newQuoteActionCreator(initialQuote));
     };
     makeRequest();
-  };
-};
-
-// defining initial state
-const initialState = {
-  status: "",
-  quotesData: []
-};
-
-//defining an action type
-const NEW_QUOTE = "NEW_QUOTE";
-
-//defining an action creator, which creates the action to select a new quote.  The action creator is a function that returns an action (object that contains information about an action-event that has occurred). It creates the action to add a new quote.
-const newQuoteActionCreator = chosenQuoteInput => {
-  return {
-    type: NEW_QUOTE,
-    payloadQuote: chosenQuoteInput
   };
 };
 
