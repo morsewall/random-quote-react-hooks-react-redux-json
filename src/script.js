@@ -244,7 +244,7 @@ const App = props => {
                     </li>
                   </ul>
                   <span>
-                    © 2019 Developed by Pat Eskinasy. All Rights Reserved.
+                    © Developed by Pat Eskinasy. All Rights Reserved.
                   </span>
                 </footer>
               </React.Fragment>
